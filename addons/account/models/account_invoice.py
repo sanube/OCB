@@ -274,7 +274,8 @@ class AccountInvoice(models.Model):
     reference_type = fields.Selection('_get_reference_type', string='Payment Reference',
         required=True, readonly=True, states={'draft': [('readonly', False)]},
         default='none')
-    comment = fields.Text('Additional Information', readonly=True, states={'draft': [('readonly', False)]})
+    comment = fields.Text('Additional Information', readonly=False
+#    comment = fields.Text('Additional Information', readonly=True, states={'draft': [('readonly', False)]})
 
     state = fields.Selection([
             ('draft','Draft'),
