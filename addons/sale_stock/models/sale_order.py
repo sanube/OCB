@@ -179,11 +179,11 @@ class SaleOrderLine(models.Model):
                         message += _('\nThere are %s %s available accross all warehouses.') % \
                                 (self.product_id.virtual_available, product.uom_id.name)
 
-                    warning_mess = {
-                        'title': _('Not enough inventory!'),
-                        'message' : message
-                    }
-                    return {'warning': warning_mess}
+                    #warning_mess = {
+                    #    'title': _('Not enough inventory!'),
+                    #    'message' : message
+                    #}
+                    #return {'warning': warning_mess}
         return {}
 
     @api.onchange('product_uom_qty')
